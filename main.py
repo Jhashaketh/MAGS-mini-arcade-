@@ -1,4 +1,4 @@
-from games import guessing_game, hangman
+from games import guessing_game, hangman, rock_paper_scissors
 from storage import load_players, save_players
 from player import Player
 
@@ -20,8 +20,9 @@ def main():
         print("\n=== MINI ARCADE ===")
         print("1. Guessing Game")
         print("2. Hangman")
-        print("3. View Stats")
-        print("4. Exit")
+        print("3. Rock Paper Scissors")  # NEW
+        print("4. View Stats")
+        print("5. Exit")
 
         choice = input("Enter choice: ")
 
@@ -30,8 +31,10 @@ def main():
         elif choice == "2":
             hangman(player)
         elif choice == "3":
-            print(player.get_stats())
+            rock_paper_scissors(player)  # NEW
         elif choice == "4":
+            print(player.get_stats())
+        elif choice == "5":
             save_players(players)
             print("Data saved successfully!")
             break
